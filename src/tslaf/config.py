@@ -31,6 +31,7 @@ class Config:
     fnn: dict = field(default_factory=dict)
     lstm: dict = field(default_factory=dict)
     legacy: dict = field(default_factory=dict)
+    phase4: dict = field(default_factory=dict)
     raw: dict = field(default_factory=dict, repr=False)
 
 
@@ -68,5 +69,6 @@ def load_config(path: str | Path = PROJECT_ROOT / "config.yaml") -> Config:
         fnn=dict(raw.get("fnn", {})),
         lstm=dict(raw.get("lstm", {})),
         legacy=dict(raw.get("legacy", {})),
+        phase4=dict(raw.get("phase4", {})),
         raw=raw,
     )
