@@ -27,6 +27,8 @@ class Config:
     market_return_lags: int
     train_frac: float
     val_frac: float
+    ridge_alphas: tuple[float, ...] = ()
+    fnn: dict = field(default_factory=dict)
     raw: dict = field(default_factory=dict, repr=False)
 
 
@@ -60,5 +62,7 @@ def load_config(path: str | Path = PROJECT_ROOT / "config.yaml") -> Config:
         market_return_lags=int(f["market_return_lags"]),
         train_frac=train_frac,
         val_frac=val_frac,
+        ridge_alphas=tuple(float(a) for a in raw.get("ridge", {}).get("alpha_grid", [])),
+        fnn=dict(raw.get("fnn", {})),
         raw=raw,
     )
