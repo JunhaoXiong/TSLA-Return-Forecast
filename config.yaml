@@ -38,3 +38,27 @@ fnn:
   max_epochs: 300
   patience: 20               # early stopping on validation MSE
   seeds: [0, 1, 2, 3, 4]
+
+lstm:
+  window_grid: [20, 60]
+  hidden_grid: [16, 32]
+  dropout_grid: [0.1, 0.3]
+  weight_decay: 0.0001
+  learning_rate: 0.001
+  batch_size: 64
+  max_epochs: 200
+  patience: 20
+  seeds: [0, 1, 2, 3, 4]
+
+# Phase 3 replication of the old iRisk notebook design, run on the clean pipeline:
+# price-level target, 60-day window of closes, 4 stacked LSTM(50) + Dropout(0.2), MinMax scaling.
+legacy:
+  window: 60
+  units: 50
+  layers: 4
+  dropout: 0.2
+  learning_rate: 0.001
+  batch_size: 32
+  max_epochs: 300
+  patience: 20
+  seeds: [0, 1, 2]
