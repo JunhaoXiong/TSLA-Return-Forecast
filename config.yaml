@@ -62,3 +62,8 @@ legacy:
   max_epochs: 300
   patience: 20
   seeds: [0, 1, 2]
+
+phase4:
+  extra_seeds: 20            # seeds 0..19 for the seed-distribution study
+  walk_forward_step: 63      # refit every 63 trading days (about a quarter)
+  walk_forward_seeds: [0, 1, 2, 3, 4]
