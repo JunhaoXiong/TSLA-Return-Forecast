@@ -1,0 +1,5 @@
+model,ret_rmse,ret_oos_r2_vs_zero,hit_rate,price_rmse,price_mae,price_r2
+zero (random walk),0.036906,0.000000,,10.579204,7.540886,0.961881
+"LSTM, mean of 5 seeds",0.036846,0.003188,0.514948,10.572692,7.531104,0.961927
+"LSTM, 5-seed ensemble",0.036614,0.015725,0.548969,10.509898,7.474459,0.962378
+"legacy price LSTM, ensemble",0.089005,-4.816298,0.554124,25.696366,19.589810,0.775103

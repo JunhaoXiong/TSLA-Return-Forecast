@@ -29,6 +29,8 @@ class Config:
     val_frac: float
     ridge_alphas: tuple[float, ...] = ()
     fnn: dict = field(default_factory=dict)
+    lstm: dict = field(default_factory=dict)
+    legacy: dict = field(default_factory=dict)
     raw: dict = field(default_factory=dict, repr=False)
 
 
@@ -64,5 +66,7 @@ def load_config(path: str | Path = PROJECT_ROOT / "config.yaml") -> Config:
         val_frac=val_frac,
         ridge_alphas=tuple(float(a) for a in raw.get("ridge", {}).get("alpha_grid", [])),
         fnn=dict(raw.get("fnn", {})),
+        lstm=dict(raw.get("lstm", {})),
+        legacy=dict(raw.get("legacy", {})),
         raw=raw,
     )
