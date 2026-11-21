@@ -1,0 +1,26 @@
+{
+  "source": "yfinance",
+  "yfinance_version": "1.8.0",
+  "auto_adjust": true,
+  "requested_start": "2010-06-29",
+  "requested_end_inclusive": "2025-12-31",
+  "yahoo_splits": {
+    "2020-08-31": 5.0,
+    "2022-08-25": 3.0
+  },
+  "downloaded_at_utc": "2026-11-21T01:56:34+00:00",
+  "rows": 3902,
+  "columns": [
+    "TSLA_Open",
+    "TSLA_High",
+    "TSLA_Low",
+    "TSLA_Close",
+    "TSLA_Volume",
+    "SPY_Close",
+    "QQQ_Close",
+    "VIX_Close"
+  ],
+  "first_date": "2010-06-29",
+  "last_date": "2025-12-31",
+  "sha256": "18c939c81620ae8379233a89f867890359e2796796a438636d1827c0c49947b3"
+}

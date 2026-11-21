@@ -1,0 +1,5 @@
+set,model,ret_rmse,ret_oos_r2_vs_zero,hit_rate,price_rmse,price_mae,price_r2
+val,zero (random walk),0.036906,0.000000,,10.579204,7.540886,0.961881
+val,train mean,0.036960,-0.002936,0.533505,10.602131,7.527337,0.961715
+test,zero (random walk),0.038203,0.000000,,10.188083,7.307285,0.986997
+test,train mean,0.038191,0.000608,0.512227,10.190677,7.313222,0.986990

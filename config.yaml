@@ -1,0 +1,27 @@
+# All tunable choices live here. Dates are inclusive.
+data:
+  target_ticker: TSLA
+  market_tickers: [SPY, QQQ, "^VIX"]
+  start: "2010-06-29"        # TSLA IPO date
+  end: "2025-12-31"
+  auto_adjust: true          # split-adjusted (TSLA pays no dividends)
+  cache_path: data/raw/prices.csv
+
+quality:
+  # A single-day simple return beyond this is flagged for manual review (possible unadjusted split).
+  extreme_return_abs: 0.40
+  # Returns within this distance of a split ratio's mechanical return (-80% for 1:5, -66.7% for 1:3) are flagged.
+  split_ratio_tolerance: 0.03
+  known_splits:              # date: shares-out multiplier
+    "2020-08-31": 5
+    "2022-08-25": 3
+
+features:
+  return_lags: 20            # TSLA log returns r_t ... r_{t-19}
+  rv_windows: [5, 20]        # realized-vol windows (days)
+  volume_window: 20
+  market_return_lags: 5      # SPY / QQQ log returns r_t ... r_{t-4}
+
+split:
+  train_frac: 0.70
+  val_frac: 0.10             # test = remaining 0.20
