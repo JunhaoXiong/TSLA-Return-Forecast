@@ -25,8 +25,8 @@ C_t * exp(y_hat). The key metric is out-of-sample R^2 against the zero-return fo
 
 | Phase | Content | Status |
 | --- | --- | --- |
-| 1 | Data snapshot, split checks, features, chronological split, zero / train-mean baselines | this PR |
-| 2 | Ridge regression and FNN (PyTorch) | |
+| 1 | Data snapshot, split checks, features, chronological split, zero / train-mean baselines | done |
+| 2 | Ridge regression and FNN (PyTorch), tuned on validation, refit on 80% | this PR |
 | 3 | LSTM on the same pipeline | |
 | 4 | Diebold-Mariano tests, multiple seeds, walk-forward robustness | |
 | 5 | Final report | |
@@ -36,7 +36,8 @@ C_t * exp(y_hat). The key metric is out-of-sample R^2 against the zero-return fo
 ```bash
 pip install -r requirements.txt
 python scripts/run_phase1.py      # uses the snapshot; --refresh re-downloads
+python scripts/run_phase2.py      # Ridge + FNN, about 40 s on one CPU thread
 python -m pytest
 ```
 
-Phase 1 output: [reports/phase1_report.md](reports/phase1_report.md).
+Reports: [Phase 1](reports/phase1_report.md), [Phase 2](reports/phase2_report.md).
